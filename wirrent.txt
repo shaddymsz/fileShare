@@ -1,0 +1,5 @@
+The core idea is to establish peer to peer network inculcating few concepts of Blockchain, helping us to download files which will be accessed/downloaded from the systems(nodes) available on network.
+
+Further there is no need of extra hardware to establish this network neither do we need to change the already existing network architecture, to run the network/application. 
+
+This setup would be platform independent. Besides the above mentioned features, the speed for downloading is between 5mbps to 20mbps(depends on network infra of college)

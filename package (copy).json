@@ -1,0 +1,32 @@
+{
+  "name": "airrent",
+  "version": "1.0.0",
+  "description": "just a bunch of codes",
+  "main": "copy.js",
+  "scripts": {
+    "test": "none"
+  },
+  "devDependencies": {
+    "express": "*",
+    "http": "*",
+    "path": "*",
+    "request": "*",
+    "mongodb": "*",
+    "mt-downloader": "*",
+    "node-schedule": "*",
+    "my-local-ip": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "prince",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}

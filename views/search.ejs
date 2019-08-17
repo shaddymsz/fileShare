@@ -1,0 +1,17 @@
+<% include navs/header.ejs %>
+
+<div class="row">
+  <form class="col s12" method="POST" action="/search">
+    <div class="row">
+      <div class="input-field col s6">
+        <input name="query" type="text" class="validate">
+        <label for="Search">Search</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="waves-effect waves-light btn" id="submit" value="submit" type="submit" >Submit</button>
+    </div>
+  </form>
+</div>
+<% include navs/footer.ejs %>
+

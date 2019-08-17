@@ -1,0 +1,23 @@
+<% include navs/header.ejs %>
+
+<div class="row" style="float:left;width:80%;">
+   <div class="collection">
+           <table class="striped">
+        <thead>
+          <tr>
+              <th>Name</th>
+              
+          </tr>
+        </thead>
+        <tbody width:80%;>
+        <% for(var i=0; i < data.length; i++) { %>
+          <tr>
+            <td><%=data[i].name%></td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+  </div>
+</div>
+<% include navs/footer.ejs %>
+

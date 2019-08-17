@@ -1,0 +1,102 @@
+
+<style>
+.container1 {
+ width:100%;
+  position:absolute;
+  top:25%;
+  z-index: -1;
+  
+  
+}
+
+.container1 .row {
+  margin-left: 0;
+}
+.circle:before {
+  content: ' \25CF';
+  color:green;
+  font-size: 100%;
+}
+.valign-wrapper{
+  float: right;
+}
+html, body {
+    height:100%;
+}
+</style>
+<div class="container1">
+  <div class="row valign-wrapper">
+    <div class=" valign">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><b>Active Nodes</b></span>
+         <ol id="friend">
+          
+        </ol>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<footer class="page-footer" style="position:fixed;bottom:0;width:100%;font-size:11px;padding:0px">
+  <div class="container">
+    <div class="row">
+      <div class="col l3 s3">
+        <h6 class="white-text">My Id/Username</h6>
+        <p class="grey-text text-lighten-4" id="my_name"></p>
+      </div>
+      <div class="col l3 s3">
+        <h6 class="white-text">My Setup Ip</h6>
+        <p class="grey-text text-lighten-4" id="my_ip"></p>
+      </div>
+      <div class="col l3 s3">  
+        <h6 class="white-text">My Current Ip</h6>
+        <p class="grey-text text-lighten-4" id="cur_ip"></p>
+      </div>
+      <div class="col l3 s3">
+        <h6 class="white-text">Shared Paths</h6>
+        <ul id="paths">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    <a class="grey-text text-lighten-4" >Issues? ping @ <a href="mailto:prncvrm.work@gmail.com">prncvrm.work@gmail.com</a></a>
+    </div>
+  </div>
+  <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+     <script src="/assets/js/materialize.min.js"></script>
+     <script>
+ $(document).ready(function () {
+        $.ajax({
+             url: "/api/stats"
+          })
+          .done(function( data ) {
+            console.log(data.friends);
+
+             $('#my_name').html(data.my_name);
+             $('#my_ip').html(data.my_ip);
+             $('#cur_ip').html(data.cur_ip);
+             (data.paths).forEach(function(elt){
+              $("#paths").append('<li><a class="grey-text text-lighten-3" href="file://'+elt+'">'+elt+'</a></li>');
+              
+             });
+         (data.friends).forEach(function(elt){
+              $("#friend").append('<li>'+elt.name+'<span class="circle"></span></li>');
+              });    
+             
+        });
+      });
+    
+</script>  
+  <%if (typeof(toast)!='undefined') {%>  <script> Materialize.toast('<%=toast%>', 4000);</script>  <%}%>
+</footer>  
+
+      
+    
+  </html>

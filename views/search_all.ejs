@@ -1,0 +1,27 @@
+<% include navs/header.ejs %>
+
+<div class="row">
+  <form class="col s12" method="POST" action="/search">
+    <div class="row">
+      <div class="input-field col s6">
+        <input name="query" type="text" class="validate">
+        <label for="Search">Search</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="waves-effect waves-light btn" id="submit" value="submit" type="submit" >Submit</button>
+    </div>
+  </form>
+</div>
+<div class="row">
+   <div class="collection" style="width:80%">
+        <% for(var i=0; i < data.length; i++) { %>
+        <a href="//<%=data[i].ip%>:3000/download/<%=data[i].path%>/<%=data[i].file_name%>" class="collection-item" style="width:80%;float:left;"><%=data[i].file_name%></a>
+        <% if(data[i].is_video){ %>
+        <a style="float:left;" href="//localhost:3000/video/<%=data[i].path%>/<%=data[i].file_name%>/<%=data[i].ip%>"><i class="small material-icons">ondemand_video</i></a>
+        <% } %>
+        <% } %>
+      </div>
+</div>
+<% include navs/footer.ejs %>
+
